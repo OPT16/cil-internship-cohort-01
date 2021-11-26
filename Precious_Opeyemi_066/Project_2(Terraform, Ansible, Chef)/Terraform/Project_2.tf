@@ -35,7 +35,7 @@ data "archive_file" "terra_zip" {
   output_path = "${local.lambda_zip_location}"
 }
 
-resource "aws_lambda_function" "lambda_function"{
+resource "aws_lambda_function" "lambda_function" {
     filename = "${local.runtime_source_file}"
     function_name = "terraform_lambda_function"
     role = aws_iam_role.iam_for_lambda.arn
